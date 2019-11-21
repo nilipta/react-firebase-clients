@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import AppNavbar from './components/layout/AppNavbar';
-import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import './App.css';
+
+import AppNavbar from './components/layout/AppNavbar';
+import DashBoard from './components/layout/DashBoard';
 
 class App extends Component{
   render() {
@@ -10,7 +12,9 @@ class App extends Component{
         <div className="App">
           <AppNavbar />
           <div className="container">
-            <h1>Hello</h1>
+            <Switch>
+              <Route exact path="/" component={DashBoard} />
+            </Switch>
           </div>
         </div>
       </Router>
